@@ -1,0 +1,30 @@
+@page "/posts"
+@inject BlazorWasmDemo.Services.PostService PostService
+
+<h3>Posts</h3>
+
+@if (posts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="list-group">
+        @foreach (var post in posts)
+        {
+            <div class="list-group-item">
+                <h5>@post.Title</h5>
+                <p>@post.Body</p>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private List<BlazorWasmDemo.Models.Post>? posts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        posts = await PostService.GetPostsAsync();
+    }
+}

@@ -1,0 +1,13 @@
+/* Pages/Posts.razor.css */
+.list-group-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.list-group-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

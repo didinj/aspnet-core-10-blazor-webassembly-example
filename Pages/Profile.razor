@@ -1,0 +1,10 @@
+<!-- Pages/Profile.razor -->
+@page "/profile/{username}"
+
+<h3>Profile Page</h3>
+<p>Welcome, @username!</p>
+
+@code {
+    [Parameter]
+    public string? username { get; set; }
+}
